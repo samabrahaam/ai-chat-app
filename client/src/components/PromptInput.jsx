@@ -1,11 +1,25 @@
+import { useState } from "react";
+
 import "../styles/PromptInput.css";
 
-function PromptInput() {
+function PromptInput({ onSend }) {
+  const [prompt, setPrompt] = useState("");
+
+  const handleSubmit = () => {
+    onSend(prompt);
+    setPrompt("");
+  };
+
   return (
     <div className="prompt-container">
-      <textarea placeholder="Ask me anything..." rows="3" />
+      <textarea
+        rows="3"
+        value={prompt}
+        placeholder="Ask me anything..."
+        onChange={(e) => setPrompt(e.target.value)}
+      />
 
-      <button>Send</button>
+      <button onClick={handleSubmit}>Send</button>
     </div>
   );
 }
