@@ -1,0 +1,17 @@
+.message {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.message.user {
+  background: #e3f2fd;
+}
+
+.message.ai {
+  background: #f1f1f1;
+}
+
+.message p {
+  margin-top: 0.5rem;
+}

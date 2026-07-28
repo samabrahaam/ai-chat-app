@@ -12,13 +12,12 @@ function Home() {
   const handleSend = (prompt) => {
     if (!prompt.trim()) return;
 
-    setMessages((prev) => [
-      ...prev,
-      {
-        role: "user",
-        text: prompt,
-      },
-    ]);
+    const userMessage = {
+      role: "user",
+      text: prompt,
+    };
+
+    setMessages((prev) => [...prev, userMessage]);
   };
 
   return (

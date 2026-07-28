@@ -1,15 +1,16 @@
+import Message from "./Message";
 import "../styles/ChatBox.css";
 
 function ChatBox({ messages }) {
   return (
     <section className="chat-box">
       {messages.length === 0 ? (
-        <p>Start a conversation by entering a prompt.</p>
+        <p className="placeholder">
+          Start a conversation by asking a question.
+        </p>
       ) : (
         messages.map((message, index) => (
-          <div key={index}>
-            <strong>You:</strong> {message.text}
-          </div>
+          <Message key={index} role={message.role} text={message.text} />
         ))
       )}
     </section>
