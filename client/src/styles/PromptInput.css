@@ -1,0 +1,14 @@
+.prompt-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.prompt-container textarea {
+  flex: 1;
+  resize: none;
+  padding: 1rem;
+}
+
+.prompt-container button {
+  width: 120px;
+}

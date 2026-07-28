@@ -1,0 +1,9 @@
+.home {
+  min-height: 100vh;
+}
+
+.chat-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 2rem auto;
+}
