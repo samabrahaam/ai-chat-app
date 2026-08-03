@@ -9,6 +9,11 @@ async function generateResponse(prompt) {
       model: HF_MODEL,
       messages: [
         {
+          role: "system",
+          content:
+            "You are a helpful AI assistant. Format responses using Markdown. Use headings, bullet lists, numbered lists, and code blocks whenever they improve readability. Avoid long walls of text.",
+        },
+        {
           role: "user",
           content: prompt,
         },

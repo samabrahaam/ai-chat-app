@@ -1,11 +1,19 @@
-import "./../styles/Message.css";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
-function Message({ role, text }) {
+import "../styles/Message.css";
+
+function Message({ role, text, time }) {
   return (
-    <div className={`message ${role}`}>
-      <strong>{role === "user" ? "You" : "AI"}:</strong>
-      <p>{text}</p>
-    </div>
+    <article className={`message ${role}`}>
+      <div className="message-header">
+        <strong>{role === "user" ? "You" : "AI"}</strong>
+
+        <small>{time}</small>
+      </div>
+
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
+    </article>
   );
 }
 

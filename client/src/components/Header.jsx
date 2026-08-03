@@ -1,10 +1,16 @@
 import "../styles/Header.css";
 
-function Header() {
+function Header({ onClearChat }) {
   return (
     <header className="header">
-      <h1>AI Chat App</h1>
-      <p>Powered by Hugging Face</p>
+      <div>
+        <h1>AI Chat App</h1>
+        <p>Powered by Hugging Face</p>
+      </div>
+
+      <button className="new-chat-btn" onClick={onClearChat}>
+        New Chat
+      </button>
     </header>
   );
 }

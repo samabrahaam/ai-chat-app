@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "../styles/PromptInput.css";
 
-function PromptInput({ onSend }) {
+function PromptInput({ onSend, loading }) {
   const [prompt, setPrompt] = useState("");
 
   const handleSubmit = () => {
-    if (!prompt.trim()) return;
+    if (!prompt.trim() || loading) return;
 
     onSend(prompt);
     setPrompt("");
@@ -26,7 +26,9 @@ function PromptInput({ onSend }) {
         }}
       />
 
-      <button onClick={handleSubmit}>Send</button>
+      <button onClick={handleSubmit} disabled={loading}>
+        {loading ? "Thinking..." : "Send"}
+      </button>
     </div>
   );
 }
