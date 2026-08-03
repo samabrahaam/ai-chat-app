@@ -12,4 +12,4 @@
 .DS_Store
 
 # Logs
-*.log
+*.log.DS_Store
