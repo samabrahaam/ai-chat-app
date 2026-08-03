@@ -18,7 +18,7 @@ async function generateResponse(prompt) {
           content: prompt,
         },
       ],
-      max_tokens: 300,
+      max_tokens: 1000,
     });
 
     return response.choices[0].message.content;
