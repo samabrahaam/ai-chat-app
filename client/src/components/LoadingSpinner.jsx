@@ -3,8 +3,15 @@ import "../styles/LoadingSpinner.css";
 function LoadingSpinner() {
   return (
     <div className="message ai">
-      <strong>AI:</strong>
-      <p className="thinking">Thinking...</p>
+      <div className="message-header">
+        <strong>AI</strong>
+      </div>
+
+      <div className="typing-indicator">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   );
 }

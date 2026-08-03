@@ -1,19 +1,36 @@
-.thinking {
-  font-style: italic;
-  color: #666;
-  animation: pulse 1.5s infinite;
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 0;
 }
 
-@keyframes pulse {
-  0% {
-    opacity: 0.3;
-  }
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #666;
+  animation: typingBounce 1.4s infinite ease-in-out;
+}
 
-  50% {
-    opacity: 1;
-  }
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
 
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingBounce {
+  0%,
+  80%,
   100% {
-    opacity: 0.3;
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+
+  40% {
+    transform: translateY(-6px);
+    opacity: 1;
   }
 }
